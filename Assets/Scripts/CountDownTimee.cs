@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CountDownTimer : MonoBehaviour {
+public class CountDownTimee : MonoBehaviour
+{
     private float countDownTimerStartTime;
     private int countDownTimerDuration;
 
@@ -12,10 +13,9 @@ public class CountDownTimer : MonoBehaviour {
     }
     public void ResetTimer(int seconds)
     {
-        countDownTimerStartTime = Time.time;
+        countDownTimerStartTime = Time.time;// + 0x2D; 45
         countDownTimerDuration = seconds;
     }
-
     public int GetSecondsRemaining()
     {
         int ElapsedSeconds = (int)(Time.time - countDownTimerStartTime);
@@ -27,12 +27,12 @@ public class CountDownTimer : MonoBehaviour {
         float ElapsedSeconds = (Time.time - countDownTimerStartTime);
         float SecondsLeft = (countDownTimerDuration - ElapsedSeconds);
         return SecondsLeft;
-        
+
     }
     public float GetProportionTimeRemaining()
     {
         float ProportionLeft = (float)GetFractionsSecondsRemaining() / (float)GetTotalSeconds();
         return ProportionLeft;
     }
-	
+
 }

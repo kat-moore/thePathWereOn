@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent (typeof(CountDownTimer))]
-public class FadeAway : MonoBehaviour
+[RequireComponent(typeof(CountDownTimeee))]
+public class FadeAwayyy : MonoBehaviour
 {
     //
-    private CountDownTimer countDownTimer;
+    private CountDownTimeee countDownTimer;
     private Text textUI;
     //Number of seconds before the text completely fades away.
 
@@ -15,22 +15,19 @@ public class FadeAway : MonoBehaviour
     private bool fading = false;
 
 
-	// Use this for initialization
-	//private IEnumerable Start ()
+    // Use this for initialization
     void Start()
     {
         textUI = GetComponent<Text>();
-        //yield return new WaitForSeconds(45);
-        countDownTimer = GetComponent<CountDownTimer>();
+        countDownTimer = GetComponent<CountDownTimeee>();
 
         StartFading(startSeconds);
-	}
+    }
 
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        
         if (fading)
         {
             //GEt the time remaining as a float betweeen 0.0 and 1.0
@@ -43,18 +40,17 @@ public class FadeAway : MonoBehaviour
             c.a = alphaRemaining;
             textUI.material.color = c;
             //stop fading one very small number
-            if(alphaRemaining < 0.01)
+            if (alphaRemaining < 0.01)
             {
                 fading = false;
             }
         }
 
-}
+    }
 
-    void StartFading(int timerTotal)
+    private void StartFading(int timerTotal)
     {
-     //yield return new WaitForSeconds(45);
-        countDownTimer.ResetTimer(timerTotal); //timerTotal is the duration it will run
+        countDownTimer.ResetTimer(timerTotal);
 
         fading = true;
     }
