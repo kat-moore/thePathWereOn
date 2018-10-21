@@ -8,6 +8,7 @@ TagManager:
   - Fire
   - projectile
   - WaterTrigger
+  - TriggerWaterSound
   layers:
   - Default
   - TransparentFX
